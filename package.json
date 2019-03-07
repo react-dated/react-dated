@@ -1,6 +1,6 @@
 {
   "name": "react-dated",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Fully customizable React calendar/date-picker",
   "author": "mpourismaiel",
   "license": "MIT",
@@ -21,7 +21,6 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },

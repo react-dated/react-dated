@@ -15,13 +15,14 @@ const Calendar: React.SFC<CalendarProps> = ({
   jalali,
   children,
 }) => {
-  const { daysInMonth, firstDay, lastDay } = getSourceInfo(source);
+  (window as any).a = source;
+  console.log({ source, $C: source.$C });
+  const { daysInMonth, firstDay } = getSourceInfo(source);
   const groupedDays = slice(
     createCalendar({
       source,
       daysInMonth,
       firstDay,
-      lastDay,
       startOfWeek: jalali ? 6 : startOfWeek,
     }),
     7,

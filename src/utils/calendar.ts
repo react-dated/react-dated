@@ -4,7 +4,6 @@ export const getSourceInfo = (source: CalendarProps['source']) => {
   return {
     daysInMonth: source.daysInMonth(),
     firstDay: source.startOf('month').day(),
-    lastDay: source.endOf('month').day(),
   };
 };
 
@@ -12,13 +11,11 @@ export const createCalendar = ({
   source,
   daysInMonth,
   firstDay,
-  // lastDay,
   startOfWeek,
 }: {
   source: CalendarProps['source'];
   daysInMonth: number;
   firstDay: number;
-  lastDay: number;
   startOfWeek: number;
 }) => {
   const days: CalendarProps['source'][] = [];

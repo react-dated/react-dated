@@ -2870,7 +2870,12 @@ date-now@^0.1.4:
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
 
-dayjs@^1.7.7, dayjs@^1.8.8:
+dayjs@^1.7.7:
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.9.tgz#8b5fda2f995ff5f29705894e1d23240f7f674f61"
+  integrity sha512-/LPzoQ77NiXf566p5babPBkqegpJ94koAQ0vUfkcfWYcuvzOTgr+N9V4IOnQ3H05Su/9dpFNOV1iPvEhAsRscw==
+
+dayjs@^1.8.8:
   version "1.8.8"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.8.tgz#81c81a8bb2488ef859f6c9bead9b62d649072bfd"
   integrity sha512-qBY3kVAVJMxzS4e7DAwZZ/SSiO/DBXbvc/qqbyf1FbsZrxBq81QPdUEWhiPu8Fragf5RfHsLwtH8kCGwKL4qLQ==
@@ -5198,9 +5203,12 @@ istanbul-reports@^1.5.1:
   dependencies:
     handlebars "^4.0.3"
 
-"jalaliday@link:../../jalaliday":
-  version "0.0.0"
-  uid ""
+jalaliday-forked@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/jalaliday-forked/-/jalaliday-forked-2.3.2.tgz#4cb5fb637dc461a27ecd6552222f7faa925fbea8"
+  integrity sha512-BxpBy4V7nHVYjelKqhWA4z1JY6SNSEYq5mLVNM71yPUiIlkv8FwIZnAIY7K5M2BWry5dYrwlHz2Xrv+AYOp63w==
+  dependencies:
+    dayjs "^1.7.7"
 
 jest-changed-files@^23.4.2:
   version "23.4.2"

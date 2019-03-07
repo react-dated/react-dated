@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
-import jalaliday from 'jalaliday';
+import jalaliday from 'jalaliday-forked';
 
 import Calendar from 'react-dated';
 
