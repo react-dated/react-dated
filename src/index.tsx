@@ -1,23 +1,52 @@
-/**
- * @class ExampleComponent
- */
+import * as React from 'react';
 
-import * as React from 'react'
+import { getSourceInfo, createCalendar } from './utils/calendar';
+import { slice } from './utils/array';
+import { CalendarProps } from './types';
 
-import styles from './styles.css'
+const SimpleContainer: React.SFC = ({ children }) => <>{children}</>;
 
-export type Props = { text: string }
+const Calendar: React.SFC<CalendarProps> = ({
+  source,
+  calendarWrapper: CalendarWrapper = SimpleContainer,
+  weekWrapper: WeekWrapper = SimpleContainer,
+  day: Day,
+  startOfWeek = 0,
+  jalali,
+  children,
+}) => {
+  const { daysInMonth, firstDay, lastDay } = getSourceInfo(source);
+  const groupedDays = slice(
+    createCalendar({
+      source,
+      daysInMonth,
+      firstDay,
+      lastDay,
+      startOfWeek: jalali ? 6 : startOfWeek,
+    }),
+    7,
+  );
 
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
+  if (children) {
+    return children(groupedDays);
   }
-}
+
+  return (
+    <CalendarWrapper>
+      {groupedDays.map((week: CalendarProps['source'][]) => (
+        <WeekWrapper
+          key={`calendar-week-${week[0].format('YYYY-MM-DD')}-${Math.random()}`}
+        >
+          {week.map((day: CalendarProps['source']) => (
+            <Day
+              key={`calendar-day-${day.format('YYYY-MM-DD')}-${Math.random()}`}
+              day={day}
+            />
+          ))}
+        </WeekWrapper>
+      ))}
+    </CalendarWrapper>
+  );
+};
+
+export default Calendar;
